@@ -62,6 +62,31 @@ definidos pelos pontos P1 e P2 será exibida com o negativo da imagem na região
 função chamada rect que vai delimitar as regiões da imagem, em seguida é criada um clone da imagem recebida e mais uma vez é delimitada
 as regiões, mas dessa vez as do clone, depois as regiões, cada uma armazenada em uma matriz, foram jogadas em  regiões diferentes
 das originais, mas na imagem clone.</p>
+<figure>
+<div>
+	<p>
+		Imagem Original
+	</p>
+	
+</div>	
+ <img src="gotg.png" alt="Imagem Original" title="Imagem Original"  />
+ 
+ <div>
+	<p>
+		Imagem Processada
+	</p>
+	
+</div>
+<img src="TrocaRegionsImg.png" alt="Imagem Processada" title="Imagem Processada"  />
+ <div>
+	<p>
+		Código
+	</p>
+	
+</div>
+<img src="TrocaRegions.png" alt="Código" title="Código"  />
+</figure>
+
 <h3>Problema do programa labeling.cpp</h3>
 <p>Existe um problema em uma imagem com mais de 255 objetos, pois cada objeto contado é rotulado com um tom de cinza diferente,
 como existem 255 tons de cinza, só seria possível contar até 255. A solucao seria guardar os valores contados em uma variavel 
