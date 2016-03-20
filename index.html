@@ -28,9 +28,12 @@
       </header>
       <section>
 <h3>Programa regions.cpp</h3>
-<p> Esse programa deverá solicitar ao usuário as coordenadas de dois pontos P1 e P2 localizados dentro dos limites 
-do tamanho da imagem e exibir que lhe for fornecida. Entretanto, a região definida pelo retângulo de vértices opostos
-definidos pelos pontos P1 e P2 será exibida com o negativo da imagem na região correspondente.</p>
+<p> Foi solicitada a implementação de um algoritmo que, dadas as coordenadas de dois
+pontos P1 e P2 localizados dentro dos limites do tamanho da imagem, inverta a coloração dos
+pixels que se encontram dentro da área delimitada por P1 e P2. O algoritmo solicita a imagem e as coordenadas ao usuário e,
+com essas informações, percorre toda a imagem até chegar na região desejada. Quando a região é encontrada para cada pixel
+da região é pego o seu valor (em tom de cinza), esse valor é subtraído de 255 (branco) e então
+é armazenado novamente no pixel. Invertendo assim a região definida pelo usuário.</p>
 <figure>
 <div>
 	<p>
@@ -101,6 +104,22 @@ auxiliar e resetar a contagem.</p>
 <img src="LabelingPrimeiro.png" alt="Código" title="Código"  />
 </figure>
 <h3>Novo programa labeling.cpp</h3>
+<p>O exercício pede que sejam identificadas regiões com ou sem buracos internos em uma
+imagem, assumindo que objetos com mais de um buraco podem existir e que as bolhas que
+tocam as bordas não sejam contadas.
+As bordas da imagem são pintadas de branco para separar os buracos que a tocam e então é
+feito um floodfill no primeiro pixel da imagem para pintar toda a borda e os buracos que a tocam
+de preto. Feito isso é aplicado o floodfill mais uma vez no primeiro pixel da imagem para todo o
+background ser preenchido com tom de cinza 1. A imagem é percorrida e sempre que for
+encontrado um pixel com valor 255 uma variável é incrementada para contar a quantidade total
+de objetos e todos os objetos são rotulados como sem buraco. Uma convenção é utilizada para
+rotular os objetos: tom de cinza 150 = sem buraco e tom de cinza 50 = com buraco. A imagem
+é percorrida novamente e, sempre que for encontrado um pixel com rótulo com buraco ou sem
+buraco, suas coordenadas x e y são armazenadas na variável p. O laço é continuado até ser
+encontrado um pixel com tom de cinza 0 (buraco). Caso isso aconteça é aplicado o floodfill no
+último elemento p encontrado e o elemento é rotulado como com buraco e o buraco encontrado
+também é rotulado como com buraco para que o mesmo não seja encontrado novamente. Se o
+elemento p já tiver sido rotulado como com buraco o floodfill não é utilizado.</p>
 <figure>
 <div>
 	<p>
@@ -128,6 +147,11 @@ auxiliar e resetar a contagem.</p>
 <img src="parte03.png" alt="Código" title="Código"  />
 </figure>
 <h3>Programa equalize.cpp</h3>
+<p>É pedido que o algoritmo implementado, antes de apresentar a imagem, faça uma
+equalização do histograma da imagem original e apresente depois a imagem equalizada.
+A solução encontrada foi converter a imagem do formato RGB para YCrCb, pois este padrão
+separa a intensidade luminosa dos outros componentes de cor, equalizar o histograma e então
+converter a imagem de volta para o padrão RGB.</p>
 <figure>
 <div>
 	<p>
@@ -179,14 +203,24 @@ o limiar de 15, toda a tela fica azul(nesse caso amarelo, pois o tom de azul esc
 </figure>
 
 <h3>Programa laplgauss.cpp</h3>
+<p>No algoritmo original foi incluída a opção Laplaciano do Gaussiano e, quando é selecionada,
+aplica o filtro gaussiano e no resultado aplica o filtro Laplaciano. O filtro gaussiano atenua o ruído e, quando é
+aplicado o filtro laplaciano, as bordas se tornam mais fáceis de identificar.</p>
 <figure>
  <div>
 	<p>
-		Imagem Processada
+		Filtro Laplaciano
 	</p>
 	
 </div>
-<!--img src="motion.png" alt="Imagem Processada" title="Imagem Processada"  /-->
+<img src="laplaciano.png" alt="Imagem Processada" title="Imagem Processada"  />
+ <div>
+	<p>
+		Filtro Laplaciano do Gaussiano
+	</p>
+	
+</div>
+<img src="laplaciano do gaussiano.png" alt="Imagem Processada" title="Imagem Processada"  />
  <div>
 	<p>
 		Código
