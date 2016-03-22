@@ -233,6 +233,50 @@ aplicado o filtro laplaciano, as bordas se tornam mais fáceis de identificar.</
 <img src="prog7parte3.png" alt="Código" title="Código"  />
 <img src="prog7parte4.png" alt="Código" title="Código"  />
 </figure>
+<h3>Programa tiltshift.cpp</h3>
+<p>É
+pedido no exercício que seja implementado um programa tiltshift.cpp que utiliza a técnica
+de tiltshift nas imagens selecionadas.
+O programa deve ter:
+Um
+ajuste para regular a altura da região central que entrará em foco.
+Um
+ajuste para regular a força de decaimento da região borrada.
+Um
+ajuste para regular a posição vertical do centro da região que entrará em foco.
+O programa carrega a imagem selecionada, cria uma cópia da mesma e aplica um filtro da
+média várias vezes na cópia para criar o efeito de blurring .
+O Cálculo da região de desfoque ao longo do eixo vertical da imagem foi feito utilizando a
+função:
+
+No código, a matriz alpha pondera a imagem original e a matriz beta (1 alpha)
+pondera a
+cópia da imagem original causando o efeito de borramento. O cálculo é refeito sempre que
+houver alterações nos parâmetros da interface.</p>
+<figure>
+<div>
+	<p>
+		Imagem Original
+	</p>
+	
+</div>	
+ <img src="velho.png" alt="Imagem Original" title="Imagem Original"  />
+ 
+ <div>
+	<p>
+		Imagem Processada
+	</p>
+	
+</div>
+<img src="novo.png" alt="Imagem Processada" title="Imagem Processada"  />
+ <div>
+	<p>
+		Código
+	</p>
+	
+</div>
+<img src="" alt="Código" title="Código"  />
+</figure>
 <!--escrver conteudo aqui texto usa p, titulo é h3 -->
       </section>
       <footer>
