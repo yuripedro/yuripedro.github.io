@@ -30,7 +30,38 @@
       <section>
       	<h2 class="header">Unidade 2</h2>
       	<h3>FiltroHomofóbico.cpp</h3>
-<p> </p>
+<p>O projeto do filtro homomórfico tem por objetivo corrigir problemas de má iluminação na imagem. O filtro age no domínio da frequência e realça as altas frequências enquanto atenua as baixas.
+
+(expressão matemática do filtro)
+
+(gráfico do filtro)
+
+Na equação matemática do filtro, gamaH, gamaL, D0 e C são variáveis que podem ser alteradas em tempo real. Os sliders recalculam as variáveis do filtro sempre que são modificados.
+<figure>
+<div>
+	<p>
+		Código
+	</p>
+	
+</div>
+<img src="fh01.png" alt="Código" title="Código"  />
+<img src="fh02.png" alt="Código" title="Código"  />
+<img src="fh03.png" alt="Código" title="Código"  />
+<img src="fh04.png" alt="Código" title="Código"  />
+<img src="fh05.png" alt="Código" title="Código"  />
+<img src="fh06.png" alt="Código" title="Código"  />
+</figure>
+
+O programa recebe uma imagem como entradae a carrega em escala de cinza. Então é adicionado 1 ao valor de cada pixel para que o log da imagem, calculado em seguida, não resulte em valores indeterminados. É calculada a FFT e os quadrantes da imagem são trocados para que a origem do sinal fique no centro da imagem. O filtro é aplicado no domínio da frequência, os quadrantes são retornados às posições originais e é claculada a FFT inversa. É calculada a exponencial da imagem, a mesma é normalizada e, finalmente, a imagem filtrada é exibida.
+
+Segue abaixo as imagens antes e depois de aplicar o filtro, mostrando os valores dos parâmetros escolhidos.
+
+(imagens dos resultados)
+
+Obs: Devido a problemas com o cálculo da exponencial (exponencial da imagem resultava em valores extremamente altos para os pixels e deixava a imagem preta), a mesma foi comentada no código final.
+
+Como visto nas imagens acima a iluminação e o brilho da imagem se tornam mais uniformes após a aplicação do filtro.
+ </p>
 
 <figure>
 <div>
@@ -48,18 +79,6 @@
 	
 </div>
 <img src=".png" alt="Imagem Processada" title="Imagem Processada"  />
- <div>
-	<p>
-		Código
-	</p>
-	
-</div>
-<img src="fh01.png" alt="Código" title="Código"  />
-<img src="fh02.png" alt="Código" title="Código"  />
-<img src="fh03.png" alt="Código" title="Código"  />
-<img src="fh04.png" alt="Código" title="Código"  />
-<img src="fh05.png" alt="Código" title="Código"  />
-<img src="fh06.png" alt="Código" title="Código"  />
 </figure>
 
       	<h3>Programa cannypoints.cpp</h3>
